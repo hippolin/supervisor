@@ -26,9 +26,9 @@ if platform_family?("smartos")
   end
 end
 
-python_pip "supervisor" do
-  action :upgrade
-  version node['supervisor']['version'] if node['supervisor']['version']
+easy_install_package 'supervisor' do
+  options "--script-dir=#{node['python']['prefix_dir']}/bin"
+  action :install
 end
 
 directory node['supervisor']['dir'] do
