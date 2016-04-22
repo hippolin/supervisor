@@ -7,6 +7,9 @@ chef_versions:
 - 12
 
 platforms:
+- name: ubuntu-14.04
+  run_list:
+  - recipe[apt]
 - name: ubuntu-12.04
   run_list:
   - recipe[apt]
